@@ -1,0 +1,14 @@
+.page-not-find {
+    height: 600px;
+    background: url(../Images/Banner-BG.svg) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-not-find h1 {
+    color: #ffffff;
+    font-style: italic;
+    font-size: 100px;
+}

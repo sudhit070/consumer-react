@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="../src/Assets/Images/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" />
+  <title>Consumer Covrage</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  <script>
+
+    const navbarFun = () => {
+      $('#basic-navbar-nav').on('click', 'a', function () {
+        if (!$(this).hasClass('dropdown-toggle') && $(document).width() < 992) {
+          $('.navbar-toggler').trigger('click');
+          $('header').removeClass('active');
+        }
+      });
+
+      $('.navbar').on('click', '.search-button', function () {
+        if($('#basic-navbar-nav').hasClass('show')){
+          $('.navbar-toggler').trigger('click');
+          $('header').removeClass('active');
+        }
+      });
+
+      $('.navbar').on('click', '.navbar-toggler, .search-button, .btnclose', function () {
+        if ($(document).width() < 992 && !$('header').hasClass('active')) {
+            $('header').addClass('active');
+        }else {
+            $('header').removeClass('active');
+        }
+      })
+    }
+
+    $(document).ready(function () {
+      navbarFun();
+    });
+    // $(window).resize(function () {
+    //   location.reload()
+    // });
+  </script>
+</body>
+
+</html>
